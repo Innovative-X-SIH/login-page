@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* background: linear-gradient(to right, #00c6ff, #0072ff); */
+        background: linear-gradient(to right, #d14fc1, #e9b832);
+      }
+      .container {
+        font-size: 20px;
+        /* background: linear-gr   adient(to right, #fceabb, #f8b500); */
+
+        /* background-color: rgb(186, 67, 225); */
+        background:linear-gradient(#41aecc,rgba(135, 28, 100, 0.667)) ;
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+        border-radius: 10px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 400px;
+        width: 400px;
+        gap: 30px;
+        border: 2px solid black;
+      }
+      input {
+        padding: 14px 7px;
+      }
+      #login {
+        height: 58px;
+        width: 176px;
+        background-color: aqua;
+        font-size: 29px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><u>Login page</u></h1>
+      <div class="username">
+        <label for="username">Enter your username: </label>
+        <input id="username" type="text" placeholder="username" />
+      </div>
+      <div class="password">
+        <label for="password">Enter your password: </label>
+        <input id="password" type="password" placeholder="password" />
+      </div>
+      <div>
+        <button id="login">Log in</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
+    <script>
+      let username = document.querySelector("#username");
+      let password = document.querySelector("#password");
+      let loginButton = document.querySelector("#login");
+      let result = document.querySelector(".result");
+
+      loginButton.onclick = () => {
+        let user = username.value;
+        let pass = password.value;
+
+        if (user === "ritesh" && pass === "kumar") {
+          result.textContent = "You are logged in";
+          result.style.color = "white";
+
+        } else {
+          result.textContent = "Invalid username or password,Try again";
+          result.style.color = "white";
+          username.value = "";
+          password.value = "";
+
+        }
+      };
+    </script>
+  </body>
+</html>
